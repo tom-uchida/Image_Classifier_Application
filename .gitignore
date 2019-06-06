@@ -1,5 +1,5 @@
-./images/building/
-./images/person/
-./images/tree/
+images/building/
+images/person/
+images/tree/
 
-./py/download_from_flickr.py
+py/download_from_flickr.py
