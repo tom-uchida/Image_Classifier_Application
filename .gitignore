@@ -1,3 +1,5 @@
-./images/data1/
-./images/data2/
-./images/data3/
+./images/building/
+./images/person/
+./images/tree/
+
+./py/download_from_flickr.py
