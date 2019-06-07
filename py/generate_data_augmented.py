@@ -29,7 +29,6 @@ for class_index, class_label in enumerate(classes):
 
         # Increase the image
         else:
-            
             for angle in range(-20, 20, 5):
                 # Rotation
                 image_rot = image.rotate(angle)

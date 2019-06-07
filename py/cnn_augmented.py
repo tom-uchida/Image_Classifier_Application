@@ -9,13 +9,11 @@ classes = ["building", "person", "tree"]
 num_of_classes = len(classes)
 image_size = 50
 
-
-
 def main():
     # Read .npy file
     X_train, X_test, y_train, y_test = np.load("./image_data_aug.npy")
-    X_train = X_train.astype("float") / 256.0
-    X_test  = X_test.astype("float") / 256.0
+    X_train = X_train.astype("float") / 255.0
+    X_test  = X_test.astype("float") / 255.0
 
     # Convert to one-hot-vector
     # [0,1,2] → [1,0,0] [0,1,0] [0,0,1]
@@ -25,8 +23,6 @@ def main():
     # Train model
     model = model_train(X_train, y_train)
     model_eval(model, X_test, y_test)
-
-
 
 def model_train(_X_train, _y_train):
     model = Sequential()
@@ -57,20 +53,17 @@ def model_train(_X_train, _y_train):
                     optimizer=opt, 
                     metrics=['accuracy'])
 
-    model.fit(_X_train, _y_train, batch_size=32, epochs=1)
+    model.fit(_X_train, _y_train, batch_size=32, epochs=30)
 
     # Save model
     model.save('./cnn_model_aug.h5')
 
     return model
 
-
 def model_eval(_model, _X_test, _y_test):
     scores = _model.evaluate(_X_test, _y_test, verbose=1)
-    print("Test Loss: ", scores[0])
+    print("\nTest Loss: ", scores[0])
     print("Test Accuracy: ", scores[1])
-
-
 
 if __name__ == "__main__":
     main()
