@@ -1,4 +1,4 @@
 images/
 py/download_from_flickr.py
 py/*.ipynb
-py/.ipynb_checkpoints/
+py/.ipynb_checkpoints
