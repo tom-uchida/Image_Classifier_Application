@@ -6,4 +6,4 @@ py/*.npy
 py/*.h5
 py/test_image
 py/__pycache__
-py/upload
+py/uploads
