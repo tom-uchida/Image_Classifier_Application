@@ -26,11 +26,10 @@ for class_index, class_label in enumerate(classes):
         if i < num_of_testdata:
             X_test.append(image_data)
             Y_test.append(class_index)
-        else:
-            X_train.append(image_data)
-            Y_train.append(class_index)
 
-            # Increase the image
+        # Increase the image
+        else:
+            
             for angle in range(-20, 20, 5):
                 # Rotation
                 image_rot = image.rotate(angle)
@@ -39,7 +38,7 @@ for class_index, class_label in enumerate(classes):
                 Y_train.append(class_index)
 
                 # Reverse
-                image_trans = image.transpose(Image.FLIP_LEFT_RIGHT)
+                image_trans = image_rot.transpose(Image.FLIP_LEFT_RIGHT)
                 image_data = np.asarray(image_trans)
                 X_train.append(image_data)
                 Y_train.append(class_index)
@@ -55,5 +54,5 @@ y_train, y_test = np.array(Y_train), np.array(Y_test)
 
 # Separate data into training data and test data
 # X_train, X_test, y_train, y_test = model_selection.train_test_split(X, Y) # (3:1)
-xy = (X_train, X_train, y_train, y_test)
+xy = (X_train, X_test, y_train, y_test)
 np.save("./image_data_aug.npy", xy)

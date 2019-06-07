@@ -2,3 +2,5 @@ images/
 py/download_from_flickr.py
 py/*.ipynb
 py/.ipynb_checkpoints
+py/*.npy
+py/*.h5

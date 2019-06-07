@@ -12,7 +12,8 @@ image_size = 50
 
 
 def main():
-    X_train, X_test, y_train, y_test = np.load("./image_data.npy")
+    # Read .npy file
+    X_train, X_test, y_train, y_test = np.load("./image_data_aug.npy")
     X_train = X_train.astype("float") / 256.0
     X_test  = X_test.astype("float") / 256.0
 
@@ -56,10 +57,10 @@ def model_train(_X_train, _y_train):
                     optimizer=opt, 
                     metrics=['accuracy'])
 
-    model.fit(_X_train, _y_train, batch_size=32, epochs=100)
+    model.fit(_X_train, _y_train, batch_size=32, epochs=1)
 
     # Save model
-    model.save('./cnn_model.h5')
+    model.save('./cnn_model_aug.h5')
 
     return model
 
