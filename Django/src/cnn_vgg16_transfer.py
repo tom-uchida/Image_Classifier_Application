@@ -43,7 +43,7 @@ top_model.add(Dropout(0.5))
 top_model.add(Dense(num_of_classes, activation="softmax"))
 
 model = Model(inputs=model.input, outputs=top_model(model.output))
-model.summary()
+# model.summary()
 
 for layer in model.layers[:15]:
     layer.trainable = False
@@ -51,7 +51,7 @@ for layer in model.layers[:15]:
 
 opt = Adam(lr=0.0001)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=["accuracy"])
-model.fit(X_train, t_train, batch_size=32, epochs=10)
+model.fit(X_train, t_train, batch_size=32, epochs=5)
 score = model.evaluate(X_test, t_test, batch_size=32)
 
 # Save model

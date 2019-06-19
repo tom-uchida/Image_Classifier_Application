@@ -15,3 +15,8 @@ python generate_train_and_test_data_224.py
 python cnn_vgg16_transfer.py
 ```
 - Save model(.h5 file)
+
+### Step3. 
+```
+cd myApp
+python manage.py runserver

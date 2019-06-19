@@ -53,7 +53,7 @@ for class_index, class_name in enumerate(classes):
         image = image.resize( (image_size, image_size) )
 
         # Store 10 test images
-        if image_index <= num_of_testdata:
+        if image_index < num_of_testdata:
             image_np = np.asarray(image)
             X_test.append( image_np )
             t_test.append(class_index)

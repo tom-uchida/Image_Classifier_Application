@@ -1,16 +1,18 @@
 .vscode/
 
 flask/images/
-flask/py/download_from_flickr.py
-flask/py/*.ipynb
-flask/py/.ipynb_checkpoints
-flask/py/*.npy
-flask/py/*.h5
-flask/py/test_image
-flask/py/__pflask/ycache__
-flask/py/uploads
+flask/src/download_from_flickr.py
+flask/src/*.ipynb
+flask/src/.ipynb_checkpoints
+flask/src/*.npy
+flask/src/*.h5
+flask/src/test_image
+flask/src/__pflask/ycache__
+flask/src/uploads
 
 Django/images/
-Django/py/download_images.py
-Django/py/*.npy
-Django/py/*.h5
+Django/src/download_images.py
+Django/src/*.npy
+Django/src/*.h5
+Django/src/myApp/media/
+Django/src/myApp/club_team_classifier/ml_models/
