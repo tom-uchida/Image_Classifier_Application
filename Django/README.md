@@ -1,5 +1,10 @@
 # Image_Classifier_Application
 
+## Overview
+Predict the club team from an football player image
+
+![sample](./images/4sample/sample.png)
+
 ## Usage
 
 ### Step0. Prepare a large number of images
@@ -16,7 +21,8 @@ python cnn_vgg16_transfer.py
 ```
 - Save model(.h5 file)
 
-### Step3. 
+### Step3. Access the website
 ```
 cd myApp
 python manage.py runserver
+```

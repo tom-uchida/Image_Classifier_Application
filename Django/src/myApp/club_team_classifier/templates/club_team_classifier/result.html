@@ -3,22 +3,32 @@
 
 {% block content %}
 <div>
-    <h4 class="mt-4 mb-5 border-bottom">Club Team Predicted Result</h4>
+    <h4 class="mt-4 mb-5 border-bottom">Predicted Result</h4>
 
     <table class='table'>
         <tbody>
             <tr>
+                <td>File name</td>
+                <td>{{ photo_name }}</td>
+            </tr>
+            <tr>
+                <td>Image file</td>
+                <td><img class='preview-image' src={{ photo_data }}></img></td>
+            </tr>
+            <tr>
                 <td>Club Team</td>
-                <td>{{ predicted }}</td>
+                <td><b>{{ predicted }}</b></td>
             </tr>
             <tr>
                 <td>Probability</td>
-                <td>{{ percentage }} %</td>
+                <td><b>{{ percentage }} %</b></td>
             </tr>
         </tbody>
     </table>
 
     <a href = "{% url 'club_team_classifier:index' %}" class="btn btn-primary">Return to image selection menu</a>
+
+    <p></p>
 
 </div>
 {% endblock %}

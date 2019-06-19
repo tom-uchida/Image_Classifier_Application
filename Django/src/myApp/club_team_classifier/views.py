@@ -26,7 +26,9 @@ def predict(request):
 
     template = loader.get_template('club_team_classifier/result.html')
     context = {
-        'predicted': predicted,
+        'photo_name': photo.image.name,
+        'photo_data': photo.image_src(),
+        'predicted' : predicted,
         'percentage': percentage,
     }
 
