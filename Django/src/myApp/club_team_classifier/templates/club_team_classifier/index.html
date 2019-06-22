@@ -5,6 +5,30 @@
 <div>
     <h4 class="mt-4 mb-5 border-bottom">Predict Club Team</h4>
 
+    <h5 class="mt-4 border-bottom">Image Selection Form</h5>
+    <p>Select an image and click "Predict" button.</p>
+    <form action="{% url 'club_team_classifier:predict' %}" method="post" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="form-group">
+            <div class="custom-file">
+                {{ form.image }}
+                <label class="custom-file-label" for="customFile">Please select the image file you want to predict.
+                </label>
+            </div>
+        </div>
+        
+        <center><button type="submit" class="btn btn-primary" onClick="onPredictButtonClick();">Predict</button></center>
+
+        <p>
+            <center>
+            <div id="predicting">
+            </div>
+            </center>
+        </p>
+    </form>
+
+    {% comment %} Supported club team list {% endcomment %}
+    <h5 class="mt-5 border-bottom">Supported Team List</h5>
     <table class='table' border="1">
         <tbody>
             <tr>
@@ -39,19 +63,6 @@
         </tbody>
     </table>
 
-    <p>Select an image and click "Predict" button.</p>
-
-    <form action="{% url 'club_team_classifier:predict' %}" method="post" class="form" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group">
-        <div class="custom-file">
-            {{ form.image }}
-            <label class="custom-file-label" for="customFile">Please select the image file you want to predict.
-            </label>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary" onClick="OnPredictButtonClick();">Predict</button>
-    <p><div id="predicting"></div></p>
-    </form>
+    
 </div>
 {% endblock %}

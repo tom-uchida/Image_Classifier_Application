@@ -3,7 +3,7 @@
 ## Overview
 Predict the club team from an football player image
 
-![sample](./sample_image/sample.png)
+![sample](./assets/sample.png)
 
 ## Usage
 
