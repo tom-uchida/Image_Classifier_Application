@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
     border: solid 2px black;
+    table-layout: fixed;
     /* border: solid 2px rgb(5,122,255); */
 }
 
