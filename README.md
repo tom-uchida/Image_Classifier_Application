@@ -21,8 +21,9 @@ python cnn_vgg16_transfer.py
 ```
 - Save model(.h5 file)
 
-### Step3. Access the website
+### Step3. Run the application & Access the website
 ```
 cd myApp
 python manage.py runserver
+open http://127.0.0.1:8000/club_team_classifier/
 ```
